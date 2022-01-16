@@ -7,14 +7,14 @@ import NewReminderScreen from './Screens/NewReminderScreen';
 const Stack = createNativeStackNavigator();
 
 function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="List" component={ListScreen} />
-        <Stack.Screen name="NewReminder" component={NewReminderScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name="List" component={ListScreen} options={{ headerShown: false }} />
+				<Stack.Screen name="NewReminder" component={NewReminderScreen} />
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
 }
 
 export default App;
