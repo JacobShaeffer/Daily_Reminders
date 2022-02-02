@@ -16,6 +16,15 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+	"plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./local/assets/notification-icon.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -23,7 +32,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.jacobshaeffer.daily_reminders"
     },
     "web": {
       "favicon": "./assets/favicon.png"

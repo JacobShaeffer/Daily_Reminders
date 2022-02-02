@@ -1,13 +1,28 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { Button, TextInput } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-function ListScreen() {
+function ListScreen({ navigation, route }) {
+	const [postText, setPostText] = useState(null);
+
 	return (
-		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-			<Text>New Reminder Screen</Text>
+		<SafeAreaView>
+			<TextInput label={'Memo'} value={postText} onChangeText={setPostText}/>	
+			<Button 
+				mode='contained'
+				onPress={() => {
+					navigation.navigate({
+						name: 'List',
+						params: { post: postText},
+						merge: true, //TODO: what does this do?
+					})
+				}} 
+			>
+				Post	
+			</Button>
 			<StatusBar style='auto'/>
-		</View>
+		</SafeAreaView>
 	);
 }
 
